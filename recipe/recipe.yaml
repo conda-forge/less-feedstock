@@ -1,5 +1,5 @@
 context:
-  version: 678
+  version: "679"
 
 package:
   name: less
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://greenwoodsoftware.com/less/less-${{ version }}.tar.gz
-  sha256: 4c085364f3028290d34647df27f56018c365dc4c0092ab7de74ed8fe89014fe7
+  sha256: 9b68820c34fa8a0af6b0e01b74f0298bcdd40a0489c61649b47058908a153d78
 build:
   number: 0
   script:
