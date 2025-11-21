@@ -19,6 +19,6 @@ macos_machine:
 ncurses:
 - '6'
 pcre2:
-- '10.46'
+- '10.47'
 target_platform:
 - osx-64
