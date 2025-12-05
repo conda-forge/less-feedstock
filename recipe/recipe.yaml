@@ -8,6 +8,7 @@ package:
 source:
   url: https://greenwoodsoftware.com/less/less-${{ version }}.tar.gz
   sha256: 2701041e767e697ee420ce0825641cedc8f20b51576abe99d92c1666d332e9dc
+
 build:
   number: 0
   script:
@@ -18,7 +19,7 @@ build:
         - copy less.exe %PREFIX%\bin\
         - copy lesskey.exe %PREFIX%\bin\
       else:
-        - ./configure --prefix=${PREFIX} --with-regex=pcre2
+        - CFLAGS="$CFLAGS -O3" ./configure --prefix=${PREFIX} --with-regex=pcre2
         - make
         - make install
 
