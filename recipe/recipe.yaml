@@ -19,7 +19,7 @@ build:
         - copy less.exe %PREFIX%\bin\
         - copy lesskey.exe %PREFIX%\bin\
       else:
-        - CFLAGS="$CFLAGS -O3" ./configure --prefix=${PREFIX} --with-regex=pcre2
+        - ./configure --prefix=${PREFIX} --with-regex=pcre2
         - make
         - make install
 
