@@ -9,7 +9,8 @@ build_platform:
   osx_arm64: osx_64
 test: native_and_emulated
 bot:
-  automerge: true
+  version_updates:
+    allowed_tag_globs: '*-rel'
 github:
   branch_name: main
   tooling_branch_name: main
