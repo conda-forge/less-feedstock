@@ -1,27 +1,25 @@
 context:
-  version: "685"
+  version: "691"
 
 package:
   name: less
   version: ${{ version }}
 
 source:
-  url: https://github.com/gwsw/less/archive/refs/tags/v${{ version }}-rel.tar.gz
-  sha256: dfade04bc449608218e7ac032d3c1a54054158a4a6b1eff7f1a18f8f0f67ce72
+  url: https://greenwoodsoftware.com/less/less-${{ version }}.tar.gz
+  sha256: 88b480eda1bb4f92009f7968b23189eaf1329211f5a3515869e133d286154d25
 
 build:
-  number: 1
+  number: 0
   script:
     - if: win
       then:
-        - nmake -f Makefile.wnm generated
         - nmake -f Makefile.wnm
         - mkdir %PREFIX%\bin
         - copy less.exe %PREFIX%\bin\
         - copy lesskey.exe %PREFIX%\bin\
       else:
-        - make -f Makefile.aut distfiles
-        - sh configure --prefix=${PREFIX} --with-regex=pcre2
+        - ./configure --prefix=${PREFIX} --with-regex=pcre2
         - make
         - make install
 
@@ -33,7 +31,6 @@ requirements:
       then:
         - autoconf
         - make
-        - groff
   host:
     - if: unix
       then:
