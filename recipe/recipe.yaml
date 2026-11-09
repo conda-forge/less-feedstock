@@ -17,7 +17,6 @@ build:
         - nmake -f Makefile.wnm
         - mkdir %PREFIX%\bin
         - copy less.exe %PREFIX%\bin\
-        - copy lesskey.exe %PREFIX%\bin\
       else:
         - ./configure --prefix=${PREFIX} --with-regex=pcre2
         - make
@@ -40,7 +39,6 @@ requirements:
 tests:
   - script:
       - less --version
-      - lesskey --version
       - ${{ "lessecho --version" if unix }}
 
 about:
